@@ -23,6 +23,7 @@ This project was developed with the following technologies:
 Simple Bank Account platform with Laravel, Vue JS, MySQL, and Docker.  
 This project contains authentication and authorization implemented in both the backend and frontend.  
 The admin user is created as soon as the application is published through the execution of migrations and seeders.  
+When a user signs up, an Observer in the backend automatically creates a new bank account with a balance of $0.0
 
 ## ⚙️ Installation and running
 
@@ -67,9 +68,9 @@ But it will only be published for a short time.
 
 ## 🚀 Laravel features used in this application
 - Migration, Factory, Seeder, FormRequest, Mutator, Job, Observer, Middleware.
-- 
+
 ## 🚀 VueJS features used in this application
-- Vue Router, Vuex, Snotify
+- Vue Router, Vuex, Snotify, Axios, V-Mask
 
 ## 🗃️ Database
 - MySQL
@@ -90,8 +91,9 @@ But it will only be published for a short time.
 - DTOs Tests
 - Enums Tests
 - FormRequests Tests
-- Services Tests
+- Services Tests  
 
+There are 49 tests and 92 assertions.  
 To run the tests, run one of the commands below within the project folder:
 ```sh
 docker-compose exec app vendor/bin/phpunit
