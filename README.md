@@ -67,7 +67,7 @@ php artisan migrate --seed
 But it will only be published for a short time.
 
 ## 🚀 Laravel features used in this application
-- Migration, Factory, Seeder, FormRequest, Mutator, Job, Observer, Middleware.
+- Migration, Factory, Seeder, FormRequest, Mutator, Job, Observer, Middleware, Sanctum.
 
 ## 🚀 VueJS features used in this application
 - Vue Router, Vuex, Snotify, Axios, V-Mask
