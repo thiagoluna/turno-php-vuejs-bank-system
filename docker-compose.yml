@@ -1,0 +1,58 @@
+version: "3.7"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        working_dir: /var/www/
+        container_name: app
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        environment:
+            - PHP_IDE_CONFIG=serverName=XdebugServer
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - redis-app
+        networks:
+            - turno
+
+    nginx-app:
+        image: nginx:alpine
+        container_name: nginx-app
+        restart: unless-stopped
+        ports:
+            - "8990:80"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - turno
+
+    mysql-app:
+        image: mysql:5.7.22
+        restart: unless-stopped
+        container_name: mysql-app
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE:-turno}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
+            MYSQL_USER: ${DB_USERNAME:-username}
+        volumes:
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        ports:
+            - "3390:3306"
+        networks:
+            - turno
+
+    redis-app:
+        image: redis:latest
+        container_name: redis-app
+        networks:
+            - turno
+
+networks:
+    turno:
+        driver: bridge
