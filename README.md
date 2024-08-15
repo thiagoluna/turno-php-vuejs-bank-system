@@ -4,7 +4,7 @@
     <img src="public/images/logo_turno.jpeg" alt="Turno" width="30" /> Turno Challenge
 </h2>
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
 This project was developed with the following technologies:
 
@@ -20,7 +20,9 @@ This project was developed with the following technologies:
 
 ## 📑 Project
 
-Simple Bank Account platform with Laravel, Vue JS, MySQL, and Docker.
+Simple Bank Account platform with Laravel, Vue JS, MySQL, and Docker.  
+This project contains authentication and authorization implemented in both the backend and frontend.  
+The admin user is created as soon as the application is published through the execution of migrations and seeders.  
 
 ## ⚙️ Installation and running
 
@@ -60,9 +62,11 @@ php artisan migrate --seed
 
 ## 💻 Access the Application by Browser
 - http://localhost:8990
+- This application was published on an EC2 instance on AWS and can be accessed via the url http://18.217.24.99:8990.  
+But it will only be published for a short time.
 
 ## 🚀 Laravel features used in this application
-- Migrations, Factories, Seeders, FormRequest, Mutators, Jobs, Observer.
+- Migration, Factory, Seeder, FormRequest, Mutator, Job, Observer, Middleware.
 - 
 ## 🚀 VueJS features used in this application
 - Vue Router, Vuex, Snotify
