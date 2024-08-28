@@ -1,7 +1,7 @@
 ## PHP Bank Platform
 
 <h2 align="center">
-    <img src="public/images/logo_turno.jpeg" alt="Turno" width="30" /> Turno Challenge
+    Simple Bank Account
 </h2>
 
 ## 🚀 Technologies
